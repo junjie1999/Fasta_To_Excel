@@ -17,7 +17,7 @@ def file_to_df(path, dir = "data\\fasta_file\\"):
         data_dict[a] = []
         data_dict[a].append(gene_name)  #####original format
         data_dict[a].append(i)
-        filename = re.match("(\w+)(\.)",path)
+        filename = re.match("([-\w]+)(\.)",path)
         df = pd.DataFrame(data_dict)
         df['Name'] = ">" + filename.group(1)
         df = df.sort_index(axis = 1)
